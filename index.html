@@ -1,12 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJETO</title>
+    <title>RSC Academy — Aprenda a Programar</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <h1>PROJETO TESTE</h1>
+
+    <!-- ===== NAVEGAÇÃO ===== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">RSC Academy</a>
+            <button id="btn-menu" class="btn-hamburguer">☰</button>
+            <ul id="nav-menu" class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+            <button class="btn-cta" onclick="inscrever()">Matricule-se</button>
+        </div>
+    </nav>
+
+    <!-- ===== BANNER ===== -->
+    <section id="inicio" class="banner">
+        <div class="container">
+            <h1>Aprenda a Programar e
+Transforme sua Carreira</h1>
+            <p>Os melhores cursos de Front-End do mercado.
+Do zero ao profissional.</p>
+            <div class="banner-btns">
+                <button class="btn-primary" onclick="inscrever()">Começar Agora 🚀</button>
+                <button class="btn-secondary">Ver Cursos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CURSOS ===== -->
+    <section id="cursos" class="secao-cursos">
+        <div class="container">
+            <h2>Nossos Cursos</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <span class="card-icon">🏗️</span>
+                    <h3>HTML & CSS</h3>
+                    <p>Fundamentos da web moderna</p>
+                    <button onclick="verCurso('HTML e CSS')">Ver Curso</button>
+                </div>
+                <div class="card">
+                    <span class="card-icon">⚡</span>
+                    <h3>JavaScript</h3>
+                    <p>Interatividade e lógica</p>
+                    <button onclick="verCurso('JavaScript')">Ver Curso</button>
+                </div>
+                <div class="card">
+                    <span class="card-icon">⚛️</span>
+                    <h3>React</h3>
+                    <p>Frameworks modernos</p>
+                    <button onclick="verCurso('React')">Ver Curso</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VÍDEO ===== -->
+    <section class="secao-video">
+        <div class="container">
+            <h2>Assista uma Aula Gratuita</h2>
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Aula Gratuita RSC Academy"
+                    frameborder="0"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <div class="container">
+            <p class="logo">RSC Academy</p>
+            <p>&copy; 2024 RSC Academy. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

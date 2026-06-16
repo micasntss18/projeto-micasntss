@@ -1,0 +1,47 @@
+// ===== MENU MOBILE =====
+const btnMenu = document.querySelector("#btn-menu");
+const navMenu = document.querySelector("#nav-menu");
+
+btnMenu.addEventListener("click", () => {
+    navMenu.classList.toggle("aberto");
+    btnMenu.textContent = navMenu.classList.contains("aberto") ? "✕" : "☰";
+});
+
+// ===== INSCRIÇÃO =====
+let inscricoes = 0;
+
+function inscrever() {
+    inscricoes++;
+    alert(`🎉 Inscrição nº ${inscricoes} realizada!\nBem-vindo(a) à RSC Academy!`);
+}
+
+// ===== VER CURSO =====
+function verCurso(nomeCurso) {
+    alert(`📚 Você escolheu: ${nomeCurso}\nEm breve você será redirecionado!`);
+}
+
+// ===== SCROLL SUAVE =====
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        const destino = document.querySelector(link.getAttribute("href"));
+        if (destino) destino.scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+// ===== ANIMAÇÃO DE ENTRADA =====
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+});
+
+document.querySelectorAll(".card").forEach(card => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
+    card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    observer.observe(card);
+});
